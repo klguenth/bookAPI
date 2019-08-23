@@ -13,13 +13,9 @@ class App extends Component {
 
   search(value) {
     const searchTerm = value;
-    const url = 'https://www.googleapis.com/books/v1/volumes';
+    const url = `https://www.googleapis.com/books/v1/volumes?key=AIzaSyBHF52B7Yen_Pi-IbhbMLVmTx5Chudr2zg&q={seachTerm}`;
     const options = {
-      method: 'GET',
-      params: {
-        key: "AIzaSyBHF52B7Yen_Pi-IbhbMLVmTx5Chudr2zg",
-        q: searchTerm        
-      }
+      method: 'GET'
     };
 
     fetch(url, options)
