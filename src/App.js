@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   search(value) {
-    const url = `https://www.googleapis.com/books/v1/volumes?key=AIzaSyBHF52B7Yen_Pi-IbhbMLVmTx5Chudr2zg&q={seachTerm}`;
+    const url = `https://www.googleapis.com/books/v1/volumes?key=AIzaSyBHF52B7Yen_Pi-IbhbMLVmTx5Chudr2zg&q=${value}`;
     const options = {
       method: 'GET'
     };
@@ -38,7 +38,6 @@ class App extends Component {
         });
       });
     }
-  }
 
   render() {
     return (
@@ -48,5 +47,5 @@ class App extends Component {
       </div>
     );
   }
-
+}
 export default App;
