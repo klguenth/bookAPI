@@ -6,13 +6,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: [],
+      books: {},
       error: null
     };
   }
 
   search(value) {
-    const searchTerm = value;
     const url = `https://www.googleapis.com/books/v1/volumes?key=AIzaSyBHF52B7Yen_Pi-IbhbMLVmTx5Chudr2zg&q={seachTerm}`;
     const options = {
       method: 'GET'
@@ -38,6 +37,7 @@ class App extends Component {
           error: err.message
         });
       });
+    }
   }
 
   render() {
@@ -48,7 +48,5 @@ class App extends Component {
       </div>
     );
   }
-
-}
 
 export default App;

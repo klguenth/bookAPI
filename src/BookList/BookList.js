@@ -12,12 +12,10 @@ class BookList extends Component {
             <li><BookItem /></li>
             <li><BookItem /></li>
             <li><BookItem /></li>
-            <li><BookItem /></li>
           </ul>
         </form>
       </div>
     );
   }
 }
-
 export default BookList;

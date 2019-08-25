@@ -1,6 +1,6 @@
 import React from 'react';
 import './BookItem.css';
-//does this need to be class or a function?
+
 export default class BookItem extends React.Component {
   constructor(props) {
     super(props);
@@ -46,13 +46,12 @@ export default class BookItem extends React.Component {
   render() {
     return (
       <div className="bookItem">
-  {/*        <h3>Title: {props.items.title}</h3>
-          <h4>Author: {props.items.authors}</h4>
-          <p>{props.saleInfo.isEbook}</p>
-          <p>{props.items.description}</p>
-          <img src={props.items.imageLinks.smallThumbnail} alt="Book Thumbnail"></img>*/}
-          <h4>Book Item</h4>
+          <h3>Title: {this.state.title}</h3>
+          <h4>Author: {this.state.authors}</h4>
+          <p>{this.state.isEbook}</p>
+          <p>{this.state.description}</p>
+          {/*<img src={this.imageLinks.smallThumbnail} alt="Book Thumbnail"></img>*/}
       </div>
-    ) 
+    )
   }
 }
