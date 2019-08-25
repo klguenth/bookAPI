@@ -51,10 +51,10 @@ export default class BookItem extends React.Component {
   render() {
     return (
       <div className="bookItem">
-          <h3>Title: onChange={e => this.titleChanged(e.target.value)}</h3>
-          <h4>Author: onChange={e => this.authorsChanged(e.target.value)}</h4>
-          <p>onChange={e => this.priceChanged(e.target.value)}</p>
-          <p>onChange={e => this.descriptionChanged(e.target.value)}</p>
+          <h3>Title: {onChange={e => this.titleChanged(e.target.value)}</h3>
+          <h4>Author: {onChange={e => this.authorsChanged(e.target.value)}}</h4>
+          <p>{onChange={e => this.priceChanged(e.target.value)}}</p>
+          <p>{onChange={e => this.descriptionChanged(e.target.value)}}</p>
           {/*<img src={this.imageLinks.smallThumbnail} alt="Book Thumbnail"></img>*/}
       </div>
     )
