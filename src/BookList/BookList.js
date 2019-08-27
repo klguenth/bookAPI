@@ -4,9 +4,9 @@ import BookItem from '../BookItem/BookItem.js';
 
 class BookList extends Component {
   bookSearchResults(responseJson) {
-    $('#bookItem').empty();
+    $('.bookItem').empty();
     for (let i = 0; i < responseJson.results.length; i++) {
-      $('#bookItem').append(
+      $('.bookItem').append(
         `<li>
           <h3>${responseJson.results[i].title}</h3>
           <h4>${responseJson.results[i].authors}</h4>
