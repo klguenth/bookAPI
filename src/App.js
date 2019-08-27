@@ -6,7 +6,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: {},
+      books: [],
       error: null
     };
   }
@@ -28,7 +28,7 @@ class App extends Component {
       .then(data => {
         console.log(data);
         this.setState({
-          books: data,
+          books: data.items,
           error: null
         });
       })
@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <div className='App'>
         <BookSearch search={value => this.search(value)} />
-        <BookList />
+        <BookList books={this.state.books}/>
       </div>
     );
   }
