@@ -10,6 +10,13 @@ export default class BookSearch extends Component {
     this.input.value = '';
   }
 
+  onChange(event) {
+    event.preventDefault();
+    const value = this.select.value;
+    this.props.search(value);
+    this.input.value = '';
+  }
+
   render() {
     return (
       <div className="bookSearch">
@@ -23,7 +30,10 @@ export default class BookSearch extends Component {
           />
           <button type="submit">Search</button>      
           <fieldset>
-            <select id="bookType">
+            <select 
+              id="bookType"
+              value={this.props.bookFilter}
+              onChange={this.onChange}>
               <option>Fiction</option>
               <option>Non-Fiction</option>
               <option>Travel</option>

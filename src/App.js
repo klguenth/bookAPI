@@ -7,6 +7,8 @@ class App extends Component {
     super(props);
     this.state = {
       books: [],
+      bookFilter: [],
+      eBooks: [],
       error: null
     };
   }
@@ -29,6 +31,8 @@ class App extends Component {
         console.log(data);
         this.setState({
           books: data.items,
+          bookFilter: data.items.volumeInfo.categories,
+          eBooks: data.items.saleInfo.isEbook,
           error: null
         });
       })

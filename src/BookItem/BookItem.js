@@ -7,10 +7,9 @@ export default class BookItem extends React.Component {
     return (
       <div className="bookItem">
           <h3>Title: {this.props.info.title}</h3>
-          <h4>Author: {this.props.info.authors[0]}</h4>
-          <p></p>
-          <p></p>
-          {/*<img src={this.imageLinks.smallThumbnail} alt="Book Thumbnail"></img>*/}
+          <h4>Author: {this.props.info.authors}</h4>
+          <p>Description: {this.props.info.description}</p>
+          <img src={'this.props.info.previewLink'} alt="Book Cover" />
       </div>
     )
   }
