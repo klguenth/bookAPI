@@ -7,10 +7,13 @@ class App extends Component {
     super(props);
     this.state = {
       books: [],
-      bookFilter: [],
-      eBooks: [],
       error: null
     };
+    this.handleFilter = this.handleFilter.bind(this)
+  }
+//function to update state from BookList
+  handleFilter(filterValue) {
+    this.setState({books: filterValue})
   }
 
   search(value) {
@@ -31,8 +34,6 @@ class App extends Component {
         console.log(data);
         this.setState({
           books: data.items,
-          bookFilter: data.items.volumeInfo.categories,
-          eBooks: data.items.saleInfo.isEbook,
           error: null
         });
       })
@@ -42,12 +43,12 @@ class App extends Component {
         });
       });
     }
-
+//attempted to pass filter function down- not returning proper info
   render() {
     return (
       <div className='App'>
         <BookSearch search={value => this.search(value)} />
-        <BookList books={this.state.books}/>
+        <BookList books={this.state.books} filter={this.handleFilter} />
       </div>
     );
   }
