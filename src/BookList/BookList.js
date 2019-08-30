@@ -5,16 +5,18 @@ import BookItem from '../BookItem/BookItem.js';
 class BookList extends Component {
 //code breaking at line 12
   onChange(event) {
+    let filteredBooks;
     const selectBookType = event.target.value;
-    console.log('original', this.props.books.length);
-    const filteredBooks = this.props.books.filter(item => item.saleInfo.saleability === selectBookType);
-    console.log(filteredBooks.length);
+    if (event.target.value === "Default") {
+      filteredBooks = this.props.books;
+    } else {
+      filteredBooks = this.props.books.filter(item => item.saleInfo.saleability === selectBookType);
+    }
     this.props.filter(filteredBooks); 
-    console.log(this.props);
   } 
 
   render() {
-    const bookItems = this.props.books.map((book, index) => {
+    const bookItems = this.props.filtered.map((book, index) => {
       return <li key={index}> <BookItem info={book.volumeInfo} /> </li>
     });
 

@@ -7,13 +7,14 @@ class App extends Component {
     super(props);
     this.state = {
       books: [],
+      filtered: [],
       error: null
     };
     this.handleFilter = this.handleFilter.bind(this)
   }
 //function to update state from BookList
   handleFilter(filterValue) {
-    this.setState({books: filterValue})
+    this.setState({filtered: filterValue})
   }
 
   search(value) {
@@ -34,6 +35,7 @@ class App extends Component {
         console.log(data);
         this.setState({
           books: data.items,
+          filtered: data.items,
           error: null
         });
       })
@@ -48,7 +50,7 @@ class App extends Component {
     return (
       <div className='App'>
         <BookSearch search={value => this.search(value)} />
-        <BookList books={this.state.books} filter={this.handleFilter} />
+        <BookList books={this.state.books} filtered={this.state.filtered} filter={this.handleFilter} />
       </div>
     );
   }
